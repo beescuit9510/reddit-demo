@@ -1,9 +1,6 @@
-package com.reddit.redditdemo.domain;
+package com.reddit.redditdemo.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -22,9 +19,11 @@ public class User {
     private Long userId;
 
     @Column
+    @NonNull
     private String username;
 
     @Column
+    @NonNull
     private String password;
 
 

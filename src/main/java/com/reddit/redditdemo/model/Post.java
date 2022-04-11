@@ -1,9 +1,6 @@
-package com.reddit.redditdemo.domain;
+package com.reddit.redditdemo.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -21,19 +18,23 @@ public class Post {
     private Long postId;
 
     @Column
+    @NonNull
     private String title;
 
     @Column
+    @NonNull
     private String content;
 
     @ManyToOne(fetch = FetchType.LAZY,
             cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "community_id")
+    @NonNull
     private Community community;
 
     @ManyToOne(fetch = FetchType.LAZY,
             cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "user_id")
+    @NonNull
     private User user;
 
     @OneToMany(cascade = {CascadeType.ALL})

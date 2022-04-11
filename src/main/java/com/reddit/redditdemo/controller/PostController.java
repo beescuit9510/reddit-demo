@@ -1,14 +1,14 @@
 package com.reddit.redditdemo.controller;
 
-import com.reddit.redditdemo.service.UserService;
+import com.reddit.redditdemo.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class UserController {
+public class PostController {
 
-    UserService service;
+    PostService service;
 
     @Autowired
-    public UserController(UserService service) {
+    public PostController(PostService service) {
         this.service = service;
     }
 }

@@ -1,14 +1,15 @@
 package com.reddit.redditdemo.service;
 
-import com.reddit.redditdemo.repository.UserRepository;
+
+import com.reddit.redditdemo.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class UserService {
+public class PostService {
 
-    UserRepository repository;
+    PostRepository repository;
 
     @Autowired
-    public UserService(UserRepository repository) {
+    public PostService(PostRepository repository) {
         this.repository = repository;
     }
 }

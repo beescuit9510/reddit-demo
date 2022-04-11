@@ -1,9 +1,6 @@
-package com.reddit.redditdemo.domain;
+package com.reddit.redditdemo.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -17,13 +14,15 @@ public class PostImage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
+    @Column(name = "post_image_id")
     private Long postImageId;
 
     @Column
+    @NonNull
     private String filepath;
 
     @Column
+    @NonNull
     private String filename;
 
 }
