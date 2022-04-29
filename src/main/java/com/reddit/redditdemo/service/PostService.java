@@ -1,15 +1,9 @@
 package com.reddit.redditdemo.service;
 
 
-import com.reddit.redditdemo.repository.PostRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class PostService {
+@Service
+interface PostService {
 
-    PostRepository repository;
-
-    @Autowired
-    public PostService(PostRepository repository) {
-        this.repository = repository;
-    }
 }
