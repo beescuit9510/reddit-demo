@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+logging:
+  level:
+  org.springframework: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include : *
+
+
+spring:
+  devtools:
+    restart :
+      enabled : true
+
+
+datasource:
+  url: jdbc:log4jdbc:mariadb://localhost:3306/reddit?characterEncoding=UTF-8&serverTimezone=UTC&allowMultiQueries=true
+  username: visangwas
+  password: ENC(i9CY/MA4ROOnVnDsGvfjc4NIa/H5J81eKQoCF1zugUE=)
+  driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+  hikari:
+
+
+springdoc:
+  version: ''
+  api-docs:
+    path: /api-docs
