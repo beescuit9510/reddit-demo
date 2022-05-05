@@ -1,0 +1,19 @@
+spring:
+#  profiles:
+#    active:
+#      - prod
+#      - local
+#      - dev
+#      - test
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+  data:
+    rest:
+      base-path: /data-api
+
+server:
+  port: 8081
+
+

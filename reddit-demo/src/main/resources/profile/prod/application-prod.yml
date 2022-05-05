@@ -1,0 +1,6 @@
+spring:
+  artemis:
+    host: artemis.reddit.com
+    port: 61617
+    user: redditclient
+    password: 9510

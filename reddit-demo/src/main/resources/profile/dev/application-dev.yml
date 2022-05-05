@@ -1,0 +1,51 @@
+server:
+  port: 8081
+
+logging:
+  level:
+  org.springframework: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include : *
+
+
+spring:
+  devtools:
+    restart :
+      enabled : true
+
+mybatis:
+  mapper-locations: classpath*:mybatis/mappers/**/*Mapper.xml
+  type-aliases-package: com.visang.**.model
+  configuration:
+    lazyLoadingEnabled: true
+    aggressiveLazyLoading: false
+    mapUnderscoreToCamelCase: true
+
+
+datasource:
+  url: jdbc:log4jdbc:mariadb://localhost:3306/reddit?characterEncoding=UTF-8&serverTimezone=UTC&allowMultiQueries=true
+  username: visangwas
+  password: ENC(i9CY/MA4ROOnVnDsGvfjc4NIa/H5J81eKQoCF1zugUE=)
+  driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+  hikari:
+
+
+springdoc:
+  version: '@project.version@'
+  api-docs:
+    path: /api-docs
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  swagger-ui:
+    operations-sorter: alpha
+    tags-sorter: alpha
+    path: /swagger-ui.html
+    disable-swagger-default-url: true
+    display-query-params-without-oauth2: true
+  paths-to-match:
+    - /api/v1/**
+    - /test/**
